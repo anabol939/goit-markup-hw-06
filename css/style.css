@@ -212,6 +212,8 @@ img {
   padding-bottom: 32px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--second-colour);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-icons {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -223,8 +225,6 @@ img {
 .contact-link:focus {
   color: var(--akcent-color);
   fill: var(--akcent-color);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-list {
@@ -544,23 +544,29 @@ link {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: var(--first-colour);
 }
-.icons-thumb {
+/*.icons-thumb {
   display: flex;
   height: 44px;
   width: 44px;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-}
+}*/
 
 .social-list {
+  margin-top: 16px;
   display: flex;
   justify-content: space-between;
 }
 .social-list-icon {
   fill: var(--vectors);
+  display: flex;
+  height: 44px;
+  width: 44px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 .social-list-link:focus .icons-thumb,
 .social-list-link:hover .icons-thumb,
@@ -597,6 +603,7 @@ link {
   justify-content: center;
   fill: var(--vectors);
 }
+
 .partners-thumb {
   width: 170px;
   height: 90px;
@@ -742,7 +749,69 @@ footer {
 .icon-list-item:not(:last-child) {
   margin-right: 10px;
 }
+.signup-text {
+  width: 219px;
+  height: 16px;
+  left: 815px;
+  top: 2749px;
+  margin-bottom: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 
+  color: var(--first-colour);
+}
+.footer form {
+  display: inline-block;
+  padding: 15px 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 358px;
+  margin-right: 12px;
+  text-align: center;
+}
+footer input {
+  background-color: var(--grey-bgc);
+  border: none;
+  color: var(--secondary-accent-color);
+  outline: none;
+  width: 100%;
+}
+.sign-btn {
+  width: 200px;
+  height: 50px;
+  background: var(--akcent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: var(--first-colour);
+  align-items: center;
+  text-align: center;
+  padding: 10px 29px;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.signup-wrap {
+  align-items: center;
+  display: flex;
+}
+.footer .sign-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.signup-wrap .footer-icons {
+  margin-left: 10px;
+}
+.footer-wraper-form {
+  margin-left: 93px;
+}
+.main-footer-list {
+  display: flex;
+}
 /*==========END FOOTER========*/
 .overlay {
   position: absolute;
@@ -787,6 +856,7 @@ footer {
   background-color: var(--first-colour);
   padding: 40px;
 }
+
 .modal-close-btn {
   position: absolute;
   top: 8px;
@@ -797,6 +867,11 @@ footer {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  fill: var(--akcent-color);
 }
 .is-hidden {
   opacity: 0;
@@ -811,9 +886,9 @@ footer {
   line-height: 1.15;
   text-align: center;
   letter-spacing: 0.03em;
-
-  color: var(--third-colour);
   margin-bottom: 12px;
+  color: var(--third-colour);
+  display: block;
 }
 .modal-form {
   display: flex;
@@ -824,12 +899,13 @@ footer {
   height: 40px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
-
+  cursor: pointer;
   border-radius: 4px;
   padding-left: 42px;
   transition: border-colour 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.modal-form-input:hover,
 .modal-form-input:focus {
   outline: none;
   border-color: var(--akcent-color);
@@ -844,17 +920,33 @@ footer {
 }
 .modal-form-field {
   position: relative;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: #757575;
 }
 .modal-form-input-wraper {
   position: relative;
   display: block;
-  margin-top: 4px;
-  margin-bottom: 10px;
 }
 .modal-form-input:focus + .modal-icon {
   fill: var(--akcent-color);
 }
 .modal-form-message {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
   width: 100%;
   height: 120px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -862,4 +954,73 @@ footer {
   border-radius: 4px;
   padding: 12px 16px;
   resize: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-message:focus {
+  border-color: var(--akcent-color);
+  outline: none;
+}
+.modal-form-check-desc {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+.modal-form-check-desc::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 15px;
+  border: 1px solid var(--third-colour);
+  border-radius: 4px;
+  margin-right: 8px;
+}
+.modal-form-term:checked + .modal-form-check-desc::before {
+  background-image: url(../images/sprite.svg#icon-icon-check);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.modal-form-term:focus + .modal-form-check-desc::before {
+  outline-color: #2196f3;
+}
+
+.modal-form-btn {
+  min-width: 200px;
+  min-height: 50px;
+  align-self: center;
+  background: #188ce8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: var(--first-colour);
+  margin-top: 30px;
+}
+.modal-checkbox_line {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.checkbox-icon {
+  position: absolute;
+  display: block;
+  bottom: 129px;
+  left: 40px;
+  transform: translateY(-50%);
+}
+.modal-form-term {
+  position: relative;
+  display: block;
+}
+.user-link {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
 }
