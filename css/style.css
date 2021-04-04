@@ -541,18 +541,17 @@ link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 44px;
-  height: 44px;
+
   border-radius: 50%;
 }
-/*.icons-thumb {
+.icons-thumb {
   display: flex;
   height: 44px;
   width: 44px;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-}*/
+}
 
 .social-list {
   margin-top: 16px;
@@ -561,12 +560,6 @@ link {
 }
 .social-list-icon {
   fill: var(--vectors);
-  display: flex;
-  height: 44px;
-  width: 44px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
 }
 .social-list-link:focus .icons-thumb,
 .social-list-link:hover .icons-thumb,
@@ -773,6 +766,7 @@ footer {
   width: 358px;
   margin-right: 12px;
   text-align: center;
+  color: var(--first-colour);
 }
 footer input {
   background-color: var(--grey-bgc);
@@ -791,6 +785,7 @@ footer input {
   align-items: center;
   text-align: center;
   padding: 10px 29px;
+
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -813,6 +808,7 @@ footer input {
   display: flex;
 }
 /*==========END FOOTER========*/
+/*=========OVERLAY==========*/
 .overlay {
   position: absolute;
   height: 294px;
@@ -838,6 +834,7 @@ footer input {
 .teem-list-link-wraper:focus .overlay {
   transform: translateY(0%);
 }
+/*========END OVERLAY=======*/
 .backdrop {
   position: fixed;
   top: 0;
@@ -939,14 +936,6 @@ footer input {
   fill: var(--akcent-color);
 }
 .modal-form-message {
-  font-family: var(--main-font);
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.01em;
-
-  color: rgba(117, 117, 117, 0.5);
   width: 100%;
   height: 120px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -960,6 +949,17 @@ footer input {
   border-color: var(--akcent-color);
   outline: none;
 }
+.modal-form-message::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+}
+
 .modal-form-check-desc {
   display: flex;
   align-items: center;
@@ -968,26 +968,34 @@ footer input {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  margin-top: 20px;
 }
 .modal-form-check-desc::before {
   content: '';
   display: block;
   width: 16px;
-  height: 15px;
+  height: 16px;
   border: 1px solid var(--third-colour);
   border-radius: 4px;
   margin-right: 8px;
+  cursor: pointer;
 }
+.modal-form-term:checked + .modal-form-check-desc::before {
+  background-image: url(../images/chekbox/icon-check.svg);
+  background-position: center;
+  background-color: var(--akcent-color);
+}
+/*
 .modal-form-term:checked + .modal-form-check-desc::before {
   background-image: url(../images/sprite.svg#icon-icon-check);
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--accent-color);
   border-color: var(--accent-color);
-}
+}*/
 
 .modal-form-term:focus + .modal-form-check-desc::before {
-  outline-color: #2196f3;
+  border-color: var(--akcent-color);
 }
 
 .modal-form-btn {
